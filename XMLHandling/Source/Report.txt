@@ -1,0 +1,52 @@
+----------------------------------------------------------------------------
+Crime: Theft
+	Object Stolen: Diamond Ring
+	Object Owner: Kate Nikolaevna
+	Location: Forbury Street, Greenvale, UK
+	Suspects:
+		Selina Kyle
+		Harvey Dent
+
+----------------------------------------------------------------------------
+
+----------------------------------------------------------------------------
+Crime: Murder
+	Victim: Robbie
+	Location: Sunflower Road, Greenvale, UK
+	Weapon: Unknown
+	Suspects:
+		Ruth
+		Daniel
+
+----------------------------------------------------------------------------
+
+----------------------------------------------------------------------------
+Crime: Murder
+	Victim: Thomas Wayne
+	Location: Crime Alley, Greenvale, UK
+	Weapon: Pistol
+	Suspects:
+		Slade
+		Oswald Cobblepot
+		Floyd Lawton
+
+----------------------------------------------------------------------------
+
+----------------------------------------------------------------------------
+Crime: Traffic Violation
+	Driver: Bruce Wayne
+	Vehicle Plate: BAT 37542
+	Offense: Speeding
+	Location: Oxford Road, Greenvale, UK
+
+----------------------------------------------------------------------------
+
+----------------------------------------------------------------------------
+Crime: Traffic Violation
+	Driver: Edward Nigma
+	Vehicle Plate: Unknown
+	Offense: Parking Violation
+	Location: Vauxhall Road, Greenvale, UK
+
+----------------------------------------------------------------------------
+

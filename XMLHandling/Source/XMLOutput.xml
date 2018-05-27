@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CrimesInfo>
+  <crime>
+    <type>theft</type>
+    <objectStolen>Diamond Ring</objectStolen>
+    <objectOwner>Kate Nikolaevna</objectOwner>
+    <location>Forbury Street, Greenvale, UK</location>
+    <suspects>
+      <suspect>Selina Kyle</suspect>
+      <suspect>Harvey Dent</suspect>
+    </suspects>
+  </crime>
+  <crime>
+    <type>murder</type>
+    <victim>Robbie</victim>
+    <location>Sunflower Road, Greenvale, UK</location>
+    <suspects>
+      <suspect>Ruth</suspect>
+      <suspect>Daniel</suspect>
+    </suspects>
+  </crime>
+  <crime>
+    <type>murder</type>
+    <victim>Thomas Wayne</victim>
+    <weapon>Pistol</weapon>
+    <location>Crime Alley, Greenvale, UK</location>
+    <suspects>
+      <suspect>Slade</suspect>
+      <suspect>Oswald Cobblepot</suspect>
+      <suspect>Floyd Lawton</suspect>
+    </suspects>
+  </crime>
+  <crime>
+    <type>traffic violation</type>
+    <driver>Bruce Wayne</driver>
+    <vehiclePlate>BAT 37542</vehiclePlate>
+    <offense>Speeding</offense>
+    <location>Oxford Road, Greenvale, UK</location>
+  </crime>
+  <crime>
+    <type>traffic violation</type>
+    <driver>Edward Nigma</driver>
+    <offense>Parking Violation</offense>
+    <location>Vauxhall Road, Greenvale, UK</location>
+  </crime>
+</CrimesInfo>
