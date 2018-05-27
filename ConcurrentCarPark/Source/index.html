@@ -1,0 +1,203 @@
+<html>
+
+    <head>
+        <title> 
+            Car Park Booking System 
+        </title>
+        
+        <script language = "JavaScript"> 
+        
+          function redirect(){
+            
+            var url = "http://localhost:8080/data=" + document.getElementById("form").name.value + ";" +
+                      document.getElementById("form").phone.value + ";" + document.getElementById("form").mail.value + ";"  + 
+                      document.getElementById("form").licence.value +";" + document.getElementById("form").plate.value + ";" + 
+                      document.getElementById("form").model.value + ";" + document.getElementById("form").arrival.value + ";" + 
+                      document.getElementById("form").departure.value;
+            //window.alert("The url is " + url );
+            window.location = url;
+          }
+        
+        
+        
+        </script>
+    </head>
+
+    <body>
+
+        <form  id="form" method = "get" enctype="multipart/form-data">
+            <table border = "0" align = "center" bgcolor = "#CAE1FF">  
+                <caption><h2>Car Park Online Booking System</h2></caption>
+
+                <tbody>
+                    <tr bgcolor = "#B0C4DE" color = "white">
+                        <td colspan = "4"> 
+                            &nbsp;
+                        </td>
+                    </tr>
+
+                    <tr bgcolor = "#4682B4" color = "white">
+                        <td colspan = "4">
+                            <h3>
+                                Driver's Info
+                            </h3>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan = "2" width = "30%">
+                            <p align = "right"> 
+                                Full Name: &nbsp; 
+                            </p>
+                        </td>
+
+                        <td colspan = "2">
+                            <input type = "text" id = "name"/>
+                        </td>
+                    </tr>
+                    
+                     <tr>
+                        <td colspan = "2">
+                            <p align = "right"> 
+                                Phone: &nbsp; 
+                            </p>
+                        </td>
+
+                        <td colspan = "2">
+                            <input type = "text" id = "phone"/>
+                        </td>
+                    </tr>
+                    
+                      <tr>
+                        <td colspan = "2" width = "30%">
+                            <p align = "right"> 
+                                Email: &nbsp; 
+                            </p>
+                        </td>
+
+                        <td colspan = "2">
+                            <input type = "text" id = "mail"/>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan = "2">
+                            <p align = "right"> 
+                                Driver's Licence Number: &nbsp; 
+                            </p>
+                        </td>
+
+                        <td colspan = "2">
+                            <input type = "text" id = "licence"/>
+                        </td>
+                    </tr>
+
+
+
+                    <tr bgcolor = "#B0C4DE" color = "white">
+                        <td colspan = "4"> 
+                            &nbsp;
+                        </td>
+                    </tr>
+
+                    <tr bgcolor = "#4682B4" color = "white">
+                        <td colspan = "4">
+                            <h3>
+                                Vehicle Info:
+                            </h3>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan = "2">
+                            <p align = "right"> 
+                                Plate: &nbsp; 
+                            </p>
+                        </td>
+
+                        <td colspan = "2">
+                            <input type = "text" id = "plate"/>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan = "2">
+                            <p align = "right"> 
+                               Manufacturer and Model: &nbsp; 
+                            </p>
+                        </td>
+
+                        <td colspan = "2">
+                            <input type = "text" id = "model"/>
+                        </td>
+                    </tr>
+
+                    <tr bgcolor = "#B0C4DE" color = "white">
+                        <td colspan = "4"> 
+                            &nbsp;
+                        </td>
+                    </tr>
+
+                    <tr bgcolor = "#4682B4" color = "white">
+                        <td colspan = "4">
+                            <h3>
+                                Booking Details: 
+                            </h3>
+                        </td>
+                    </tr>
+
+                   
+
+                    <tr>
+                        <td colspan = "2">
+                            <p align = "right"> 
+                                Arrival Time (DD/MM/YYYY - HH:MM): &nbsp;
+                            </p>
+                        </td>
+                        
+                        <td colspan = "2">
+                            <input type = "text" id = "arrival"/>
+                        </td>
+
+                        
+                    </tr>
+                    
+                    <tr>
+                        <td colspan = "2">
+                            <p align = "right"> 
+                                Departure Time (DD/MM/YYYY - HH:MM): &nbsp;
+                            </p>
+                        </td>
+                        
+                        <td colspan = "2">
+                            <input type = "text" id = "departure"/>
+                        </td>
+
+                        
+                    </tr>
+
+                    <tr bgcolor = "#B0C4DE" color = "white">
+                        <td colspan = "4"> 
+                            &nbsp;
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan = "4"> 
+                            &nbsp;
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan = "1">
+                            <p align = "right"> 
+                                <input type = "button" name = "action" value = "Next" onClick = "redirect()"/>
+                            </p>
+                        </td>
+                    </tr>             
+                </tbody>  
+            </table>
+        </form>
+    </body>
+</html>
+

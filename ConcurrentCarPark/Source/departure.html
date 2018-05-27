@@ -1,0 +1,100 @@
+<html>
+
+    <head>
+        <title> 
+            Car Park Check-out System 
+        </title>
+        
+        <script language = "JavaScript"> 
+        
+          function redirect(){
+            
+            var url = "http://localhost:8083/data=" + document.getElementById("form").booking.value + ";" +
+                      document.getElementById("form").licence.value + ";" + document.getElementById("form").space.value;
+            //window.alert("The url is " + url );
+            window.location = url;
+          }
+        
+        
+        
+        </script>
+    </head>
+
+    <body>
+
+        <form  id="form" method = "get" enctype="multipart/form-data">
+            <table border = "0" align = "center" bgcolor = "#CAE1FF">  
+                <caption><h2>Car Park Check-out</h2></caption>
+
+                <tbody>
+                    <tr bgcolor = "#B0C4DE" color = "white">
+                        <td colspan = "4"> 
+                            &nbsp;
+                        </td>
+                    </tr>
+
+                    <tr bgcolor = "#4682B4" color = "white">
+                        <td colspan = "4">
+                            <h3>
+                                Booking Details
+                            </h3>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan = "2" width = "30%">
+                            <p align = "right"> 
+                                Booking Number: &nbsp; 
+                            </p>
+                        </td>
+
+                        <td colspan = "2">
+                            <input type = "text" id = "booking"/>
+                        </td>
+                    </tr>
+                    
+                     <tr>
+                        <td colspan = "2">
+                            <p align = "right"> 
+                                Driver's Licence: &nbsp; 
+                            </p>
+                        </td>
+
+                        <td colspan = "2">
+                            <input type = "text" id = "licence"/>
+                        </td>
+                    </tr>
+                    
+                      <tr>
+                        <td colspan = "2" width = "30%">
+                            <p align = "right"> 
+                                Parking Space: &nbsp; 
+                            </p>
+                        </td>
+
+                        <td colspan = "2">
+                            <input type = "text" id = "space"/>
+                        </td>
+                    </tr>
+
+
+                    <tr bgcolor = "#B0C4DE" color = "white">
+                        <td colspan = "4"> 
+                            &nbsp;
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td colspan = "1">
+                            <p align = "right"> 
+                                <input type = "button" name = "action" value = "OK" onClick = "redirect()"/>
+                            </p>
+                        </td>
+                    </tr>             
+                </tbody>  
+            </table>
+        </form>
+    </body>
+</html>
+

@@ -1,0 +1,78 @@
+<html>
+
+    <head>
+        <title> 
+            E-Ticket collection
+        </title>
+        
+        <script language = "JavaScript"> 
+        
+          function redirect(){
+            
+            var url = "http://localhost:8081/data=" + document.getElementById("form").mail.value;
+            //window.alert("The url is " + url );
+            window.location = url;
+          }
+        
+        
+        
+        </script>
+    </head>
+
+    <body>
+
+        <form  id="form" method = "get" enctype="multipart/form-data">
+            <table border = "0" align = "center" bgcolor = "#CAE1FF">  
+                <caption><h2>E-Ticket collection system</h2></caption>
+
+                <tbody>
+                    <tr bgcolor = "#B0C4DE" color = "white">
+                        <td colspan = "4"> 
+                            &nbsp;
+                        </td>
+                    </tr>
+
+                    <tr bgcolor = "#4682B4" color = "white">
+                        <td colspan = "4">
+                            <h3>
+                                Email
+                            </h3>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan = "2" width = "30%">
+                            <p align = "right"> 
+                                Enter your email address: &nbsp; 
+                            </p>
+                        </td>
+
+                        <td colspan = "2">
+                            <input type = "text" id = "mail"/>
+                        </td>
+                    </tr>
+                    
+                    <tr bgcolor = "#B0C4DE" color = "white">
+                        <td colspan = "4"> 
+                            &nbsp;
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan = "4"> 
+                            &nbsp;
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan = "1">
+                            <p align = "right"> 
+                                <input type = "button" name = "action" value = "Next" onClick = "redirect()"/>
+                            </p>
+                        </td>
+                    </tr>             
+                </tbody>  
+            </table>
+        </form>
+    </body>
+</html>
