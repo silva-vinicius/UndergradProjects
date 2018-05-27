@@ -1,0 +1,10 @@
+1|3|2|SELECT filme.movie_name, pessoa.person_name FROM person as pessoa NATURAL JOIN role as papel NATURAL JOIN role_type as tipo_papel NATURAL JOIN movie as filme WHERE pessoa.gender='f' AND tipo_papel.type_name = 'director'
+2|10|2|SELECT person_name, COUNT(*) FROM movie_genre NATURAL JOIN movie_info NATURAL JOIN role NATURAL JOIN role_type NATURAL JOIN person WHERE (type_name='actress' OR type_name='actor') AND (genre_name='CRIME') GROUP BY (person_id) ORDER BY COUNT(*) DESC LIMIT 10
+8|21|2|SELECT genero.genre_name, AVG(filme.rating) FROM movie as filme NATURAL JOIN movie_info NATURAL JOIN movie_genre as genero GROUP BY movie_genre_id ORDER BY 2 DESC
+9|2|2|SELECT gender, COUNT(gender) * 100 / (SELECT COUNT(gender) FROM person NATURAL JOIN role) AS Percentage FROM person NATURAL JOIN role GROUP BY gender HAVING gender = 'f' OR gender = 'm' ORDER BY Percentage
+3|10|3|SELECT pessoa.person_name, filme.movie_name, filme.votes FROM person as pessoa NATURAL JOIN role NATURAL JOIN role_type NATURAL JOIN movie as filme NATURAL JOIN movie_info NATURAL JOIN movie_genre WHERE type_name='director' AND genre_name='Thriller' ORDER BY votes DESC LIMIT 10
+4|21|2|SELECT genero.genre_name, COUNT(filme.movie_id) FROM movie AS filme NATURAL JOIN movie_info NATURAL JOIN movie_genre AS genero GROUP BY genero.genre_name ORDER BY 2 ASC
+12|51|2|SELECT person_name, role_name FROM role NATURAL JOIN person NATURAL JOIN (SELECT * FROM movie WHERE movie_name = 'Back to the Future') as mv
+13|8|3|SELECT movie_name, person_name, genre_name FROM movie NATURAL JOIN (SELECT * FROM role WHERE role_name='director') as drct NATURAL JOIN person NATURAL JOIN movie_info NATURAL JOIN (SELECT * FROM movie_genre WHERE genre_name='Horror') AS hrr
+14|2|3|SELECT movie_name, role_name, rating FROM (SELECT * FROM person NATURAL JOIN role NATURAL JOIN movie WHERE person_name='Foster, Jodie') AS fj
+15|179|3|SELECT person_name, movie_name, rating FROM (person NATURAL JOIN movie NATURAL JOIN (SELECT * FROM movie_info WHERE movie_genre_id=7) AS mv7 NATURAL JOIN (SELECT * FROM role WHERE role_name='director') AS drct) ORDER BY rating DESC 
