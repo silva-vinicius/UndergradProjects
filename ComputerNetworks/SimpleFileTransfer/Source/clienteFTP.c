@@ -27,7 +27,7 @@ int receiveFile(char* fileName, int comSckt, int buffLen){
     
     int itrRcvdBytes=0;
 
-    //recebe <buffLen> bytes ate que nao existam mais dados a serem recebidos
+    //receives <buffLen> bytes until there are no more data to be received
     while((itrRcvdBytes = recv(comSckt,buffer, buffLen, 0)) > 0){
         totalRcvdBytes+=itrRcvdBytes;
         fwrite(buffer, sizeof(char), itrRcvdBytes, receivedFile);
@@ -45,7 +45,7 @@ int main(int argc, char* argv[]){
     struct sockaddr_in serverAddr;
 
 
-    //Lendo entrada da linha de comando
+    //Reading input from command line
     char* serverIP = (argv)[1];
     int serverPort = atoi((argv)[2]);
     char* requestedFile = (argv)[3];
@@ -53,7 +53,7 @@ int main(int argc, char* argv[]){
 
     int com_socket=0;
 
-    //cria o socket TCP:
+    //creates a TCP socket:
     if( (com_socket = socket(AF_INET, SOCK_STREAM, 0))  < 0 ){
 
         error("Erro na criacao do socket");
@@ -68,14 +68,14 @@ int main(int argc, char* argv[]){
         error("Endereco do servidor invalido");
     }
 
-    //Structs utilizadas para armazenar horarios de inicio e fim da transmissao
+    //Structs used to store the times of beginning and end of the transmission.
     struct timespec startTime, endTime;
 
-    //pega o horario do Sistema Operacional antes de solicitar o arquivo
+    //reads the OS's clock time before requesting the file.
     clock_gettime(CLOCK_MONOTONIC_RAW, &startTime);
 
     if(connect(com_socket, (struct sockaddr*) &serverAddr, sizeof(serverAddr)) <0){
-        error("Nao foi possivel conectar ao servidor");
+        error("It was not possible to connect to the server");
     }
 
     send(com_socket, requestedFile, strlen(requestedFile), 0);
@@ -84,7 +84,7 @@ int main(int argc, char* argv[]){
     int bytesReceived = receiveFile(requestedFile, com_socket, buffLen);
 
 
-    //pega o horario do Sistema Operacional depois de ter recebido o arquivo
+    //reads the OS's clock time after receiving the file.
     clock_gettime(CLOCK_MONOTONIC_RAW, &endTime);
 
 
@@ -96,12 +96,12 @@ int main(int argc, char* argv[]){
     double timeSeconds = ((double)elapsedTime / (double)1000);
 
 
-    printf("Buffer %5u byte(s), %10.2f kbps (%5u bytes em %3u.%06u s)\n",
+    printf("Buffer %5u byte(s), %10.2f kbps (%5u bytes in %3u.%06u s)\n",
            buffLen,
            ((bytesReceived/1000) / timeSeconds ),
            bytesReceived,
            (elapsedTime/1000),
-           ((elapsedTime%1000)*1000)); //multiplicando por mil para que apareça nas 3 primeiras casas decimais
+           ((elapsedTime%1000)*1000)); //multiplying by 1000 so that the number will be in the first decimal digits
 
     return 0;
 
