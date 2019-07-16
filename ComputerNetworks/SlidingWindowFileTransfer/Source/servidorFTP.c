@@ -12,7 +12,7 @@
 
 
 //----------------------------------------------------------------------------------------------------------------------
-//funcao para tratar erros em chamadas de sistema
+//Handling errors in system calls
 void error(char* msg){
     perror(msg);
     exit(1);
@@ -42,7 +42,7 @@ void readArgs(int argc, char* argv[], int* port, int* buffer, int* windowSize){
     }
 
     if(tp_init()<0){
-        error("Erro na inicializacao da biblioteca do TP");
+        error("Could not initialize the courseworks given library");
     }
 
     //reads the port number from command line
@@ -165,7 +165,7 @@ void sendFile(int comSckt, so_addr* client_addr,  char* fileName, int pseudoBuff
     FILE* requestedFile = fopen(fileName, "rb");
 
 	if(requestedFile==NULL){
-		error("Houve um problema ao abrir o arquivo requisitado\n");	
+		error("Could not open the requested file\n");	
 	}
 
     //finds out how many bytes we need to send
@@ -330,14 +330,14 @@ int main(int argc, char* argv[]) {
     readArgs(argc, argv, &portNumber, &pseudoBuffLen, &windowSize);
 
     if(tp_init()<0){
-        error("Erro na inicializacao da biblioteca do TP");
+        error("Could not initialize the courseworks given library");
     }
 
 
     int mtu = tp_mtu();
 
     if(pseudoBuffLen+14 > mtu){
-        printf("O tamanho do buffer nao pode ser maior que: %d\n", mtu-14);
+        printf("Error. Buffer size cannot be larger than: %d\n", mtu-14);
         exit(1);
     }
 
@@ -350,14 +350,14 @@ int main(int argc, char* argv[]) {
 
     int i=0;
     while(i<15){
-		char* requestedFileName = receiveFileName(mtu, sockfd, cliAddr, pseudoBuffLen);
+	char* requestedFileName = receiveFileName(mtu, sockfd, cliAddr, pseudoBuffLen);
 
     	sendFile(sockfd,cliAddr,requestedFileName,pseudoBuffLen,windowSize);
 
     	free(requestedFileName);
 		
-		i++;
-	}
+	i++;
+    }
 
     
     printf("server finished\n");
