@@ -14,11 +14,11 @@
 
 int main(void) {
 
-	//Cria um grafo e faz a leitura da entrada
+	//Creates a graph and reads the input
 	Grafo graph;
-    leGrafo(&graph);
+        leGrafo(&graph);
 
-    //Cria um grafo representando a arvore minima
+    	//Creates a graph representing the minimum spanning tree
 	Grafo minimalTree;
 	arvoreMinima(graph, &minimalTree);
 
