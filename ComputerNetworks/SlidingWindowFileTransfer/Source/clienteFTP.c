@@ -7,7 +7,7 @@
 #include "Packet.h"
 
 //----------------------------------------------------------------------------------------------------------------------
-//funcao para tratar erros em chamadas de sistema
+//Handling errors in system calls
 void error(char* msg){
     perror(msg);
     exit(1);
@@ -138,10 +138,10 @@ void readArgs(int argc, char* argv[], char** serverAddress, int* port, int* buff
     }
 
     if(tp_init()<0){
-        error("Erro na inicializacao da biblioteca do TP");
+        error("Could not initialize the courseworks given library");
     }
 
-    //reads the file name in the format "xxx.xxx.xxx.xxx"
+    //reads the server address in the format "xxx.xxx.xxx.xxx"
     *serverAddress = (char*) malloc(strlen(argv[1])*sizeof(char));
     strcpy(*serverAddress, argv[1]);
 
@@ -180,21 +180,21 @@ int main(int argc, char* argv[]) {
     FILE* requestedFile = fopen(fileName, "wb");
 
     if(tp_init()<0){
-        error("Erro na inicializacao da biblioteca do TP");
+        error("Could not initialize the courseworks given library");
     }
 
 
     int mtu = tp_mtu();
 
     if(pseudoBuffLen+14>mtu){
-        printf("Erro. O buffer nao pode ser maior que %d\n", mtu-14);
+        printf("Error. Buffer size cannot be larger than %d\n", mtu-14);
         exit(1);
     }
 
     so_addr* serverAddr = (so_addr*)malloc(sizeof(so_addr));
 
     if(tp_build_addr(serverAddr, serverIP, serverPort)<0){
-        error("Nao foi possivel construir o endereco do servidor");
+        error("It was not possible to build the servers address");
     }
 
     int com_sckt = tp_socket(0);
@@ -245,7 +245,7 @@ int main(int argc, char* argv[]) {
            ((bytesReceived/1000) / timeSeconds ),
            bytesReceived,
            (elapsedTime/1000),
-           ((elapsedTime%1000)*1000)); //multiplicando por mil para que apareça nas 3 primeiras casas decimais
+           ((elapsedTime%1000)*1000)); //Multiplying by 1000 so that the number is displayed in the first digits
 
     free(fileName);
     free(serverIP);
